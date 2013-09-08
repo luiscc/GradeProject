@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="eclipselink">
+    <CLASSES>
+      <root url="jar://E:/Projecto de Grado Scrum Toll/eclipselink-2.5.0.v20130507-3faac2b (1)/eclipselink/jlib/eclipselink.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <persistence-unit name="enterprise" transaction-type="RESOURCE_LOCAL">
+        <class>Models.Todo</class>
+        <class>Models.Project</class>
+        <class>Models.Sprint</class>
+        <class>Models.UserStory</class>
+        <class>Models.User</class>
+        <class>Models.Profile</class>
+        <class>Models.PermissionSet</class>
+        <class>Models.Task</class>
+        <class>Models.LogHour</class>
+        <properties>
+            <property name="javax.persistence.target-database" value="PostgreSQL" />
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/testdb" />
+            <property name="javax.persistence.jdbc.user" value="postgres" />
+            <property name="javax.persistence.jdbc.password" value="postgres" />
+            <property name="eclipselink.ddl-generation" value="create-or-extend-tables" />
+            <property name="eclipselink.ddl-generation.output-mode" value="database" />
+
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
