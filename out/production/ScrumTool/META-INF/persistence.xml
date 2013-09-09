@@ -7,11 +7,11 @@
         <class>Models.Project</class>
         <class>Models.Sprint</class>
         <class>Models.UserStory</class>
-        <class>Models.User</class>
         <class>Models.Profile</class>
         <class>Models.PermissionSet</class>
         <class>Models.Task</class>
         <class>Models.LogHour</class>
+        <class>Models.UserScrum</class>
         <properties>
             <property name="javax.persistence.target-database" value="PostgreSQL" />
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />

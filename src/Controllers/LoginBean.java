@@ -12,6 +12,7 @@ package Controllers;
  * To change this template use File | Settings | File Templates.
  */
 
+import helpers.UserHelper;
 import org.primefaces.context.RequestContext;
 
 
@@ -20,53 +21,63 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.*;
 import javax.faces.event.*;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-//@ManagedBean(name = "LoginBean")
+@ManagedBean(name = "LoginBean")
 
 public class LoginBean implements Serializable {
 
 
-    public  String username;
-
-    public String password;
+    private  String username;
+    private String error;
+    private  String password;
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
+    public void setUsername(String username)
+    {
         this.username = username;
     }
 
-    public String getPassword() {
+    public String getPassword()
+    {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(String password)
+    {
         this.password = password;
     }
 
-    public void login(ActionEvent actionEvent) {
-       RequestContext context = RequestContext.getCurrentInstance();
-
-        FacesMessage msg = null;
-        boolean loggedIn = false;
-        System.out.println("resssssssss");
-        System.out.println("tes"+context.isAjaxRequest());
-        if(username != null  && username.equals("admin") && password != null  && password.equals("admin")) {
-            loggedIn = true;
-            msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", username);
-        } else {
-            loggedIn = false;
-            msg = new FacesMessage(FacesMessage.SEVERITY_WARN, "Login Error", "Invalid credentials");
+    public void login(ActionEvent actionEvent) throws IOException
+    {
+        RequestContext context = RequestContext.getCurrentInstance();
+        UserHelper helper = UserHelper.getInstance();
+        Boolean result =helper.existUser(username, password);
+        System.out.println(result);
+        if (result)
+        {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("views/main.xhtml");
         }
-        context.addCallbackParam("categories","res");
+        else
+        {
+            error="invalid Credentials";
+            context.addCallbackParam("validationFailed",false);
+        }
 
-        FacesContext.getCurrentInstance().addMessage(null, msg);
 
-       context.addCallbackParam("loggedIn", loggedIn);
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
     }
 }

@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="javax.persistence.source_2.1.0.v201304241213">
     <CLASSES>
-      <root url="jar://E:/Projecto de Grado Scrum Toll/eclipselink-2.5.0.v20130507-3faac2b (1)/eclipselink/jlib/jpa/javax.persistence_2.1.0.v201304241213.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../eclipselink-2.5.0.v20130507-3faac2b (1)/eclipselink/jlib/jpa/javax.persistence_2.1.0.v201304241213.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://E:/Projecto de Grado Scrum Toll/eclipselink-2.5.0.v20130507-3faac2b (1)/eclipselink/jlib/jpa/javax.persistence.source_2.1.0.v201304241213.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../eclipselink-2.5.0.v20130507-3faac2b (1)/eclipselink/jlib/jpa/javax.persistence.source_2.1.0.v201304241213.jar!/" />
     </SOURCES>
   </library>
 </component>

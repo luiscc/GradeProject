@@ -7,219 +7,191 @@
       xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-<!--
-    <script type="text/javascript" src="js/ext-all-debug.js"></script>
-   <link rel="stylesheet" type="text/css" href="css/resources/css/ext-all.css"/>
-   -->
+
+        <script type="text/javascript" src="js/ext-all-debug.js"></script>
+       <link rel="stylesheet" type="text/css" href="css/resources/css/ext-all.css"/>
+
     <!--
     <script type="text/javascript">
         src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
     </script>
     -->
-    <link rel="icon" href="images/favicon.gif" type="image/x-icon"/>
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
     <link rel="shortcut icon" href="images/favicon.gif" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     <link type="text/css" href="css/css3.css" rel="stylesheet" />
 
 
- </h:head>
-<body>
-    <h1>Hello World PrimeFaces</h1>
+</h:head>
+<h:body>
+<h1>Hello World PrimeFaces</h1>
 
-    <div id="container">
+<div id="container">
 
-        <!--start header-->
+    <!--start header-->
 
-        <header>
+    <header>
 
-            <!--start logo-->
-            <a href="#" id="logo"><img src="images/logo.png" width="221" height="100" alt="logo"/></a>
+        <!--start logo-->
+        <a href="#" id="logo"><img src="images/logo.png" width="221" height="100" alt="logo"/></a>
 
-            <!--end logo-->
+        <!--end logo-->
 
-            <!--start menu-->
+        <!--start menu-->
 
-            <nav>
-                <ul>
-                    <li><a href="#" class="current">Home</a>
+        <nav>
+            <ul>
+                <li><a href="#" class="current">Home</a>
 
-                    </li>
-                    <li><a href="#">About us</a></li>
-                    <li><h:outputLink id="loginLink1" value="javascript:void(0)" onclick="dlg.show()" title="login">
-                        login
-                    </h:outputLink>
+                </li>
+                <li><a href="#">About us</a></li>
+                <li><h:outputLink id="loginLink1" value="javascript:void(0)" onclick="dlg.show()" title="login">
+                    login
+                </h:outputLink>
 
-                    </li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                </li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
 
-                </ul>
-            </nav>
-            <!--end menu-->
+            </ul>
+        </nav>
+        <!--end menu-->
 
 
-            <!--end header-->
+        <!--end header-->
+    </header>
+
+
+    <!--start intro-->
+
+    <div id="intro">
+
+        <div class="group_bannner_right">
+            <img src="images/picture.png" width="550" height="316"  alt="baner"/>
+        </div>
+
+        <header class="group_bannner_left">
+            <hgroup>
+                <h1>Simple.Think. </h1>
+                <h2>“The little things are infinitely the most important.“</h2>
+            </hgroup>
         </header>
-
-
-        <!--start intro-->
-
-        <div id="intro">
-
-            <div class="group_bannner_right">
-                <img src="images/picture.png" width="550" height="316"  alt="baner"/>
-            </div>
-
-            <header class="group_bannner_left">
-                <hgroup>
-                    <h1>Simple.Think. </h1>
-                    <h2>“The little things are infinitely the most important.“</h2>
-                </hgroup>
-            </header>
-        </div>
-        <!--end intro-->
+    </div>
+    <!--end intro-->
 
 
 
-        <script type="text/javascript">
-            function handleLoginRequest(xhr, status, args) {
-                if(args.validationFailed || !args.loggedIn) {
-                    PF('dlg').jq.effect("shake", { times:5 }, 100);
-                }
-                else {
-                    PF('dlg').hide();
-                    $('#loginLink').fadeOut();
-                }
+    <script type="text/javascript">
+        function handleLoginRequest(xhr, status, args) {
+            if(args.validationFailed || !args.loggedIn) {
+                PF('dlg').jq.effect("shake", { times:5 }, 100);
             }
-        </script>
+            else {
+                PF('dlg').hide();
+                $('#loginLink').fadeOut();
+            }
+        }
+    </script>
 
-        <!--start holder-->
+    <!--start holder-->
 
-        <div class="holder_content">
+    <div class="holder_content">
 
-            <section class="group1">
-                <h3>About us</h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin.
-                    Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
-                <a href=""><span class="read_more">Read more...</span></a>
+        <section class="group1">
+            <h3>About us</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin.
+                Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
+            <a href=""><span class="read_more">Read more...</span></a>
 
-            </section>
-
-
-
-            <section class="group2">
-                <h3>Services</h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin.
-                    Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
-                <a href=""><span class="read_more">Read more ...</span></a>
-
-            </section>
+        </section>
 
 
 
-            <section class="group3">
-                <h3>News</h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin.
-                    Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
-                <a href=""><span class="read_more">Read more...</span></a>
+        <section class="group2">
+            <h3>Services</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin.
+                Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
+            <a href=""><span class="read_more">Read more ...</span></a>
 
-            </section>
-
-
-        </div>
-        <!--end holder-->
-
-        <!--start holder-->
-
-        <div class="holder_content1">
-            <section class="group4">
-                <h3>Gallery</h3>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin.
-                    Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
-                <div class="pikachoose">
-                    <ul id="pikame" >
-                        <li><a href="#"><img src="images/picture3.jpg" width="500" height="250"  alt="picture"/></a><span>“Simplicity is the nature of great souls.”</span></li>
-                        <li><a href="#"><img src="images/picture2.jpg" width="500" height="250" alt="picture"/></a><span>“The little things are infinitely the most important. “ </span></li>
-                        <li><a href="#"><img src="images/picture1.jpg" width="500" height="250" alt="picture"/></a><span>“Simplicity is the essence of happiness.”</span></li>
-                    </ul>
-                </div>
-
-            </section>
+        </section>
 
 
 
-            <section class="group5">
-                <h3>Testimonials</h3>
-                <p><span class="purple">1)</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin.
-                    Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
-                <p><span class="purple">2)</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin.
-                    Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
-                <p><span class="purple">3)</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin.
-                    Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
+        <section class="group3">
+            <h3>News</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin.
+                Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
+            <a href=""><span class="read_more">Read more...</span></a>
 
+        </section>
 
-            </section>
-
-
-        </div>
-        <!--end holder-->
-
-        <h:form id="form">
-            <h:outputLink id="loginLink" value="javascript:void(0)" onclick="dlg.show()" title="login">
-                <p:graphicImage value="/images/bg.png" />
-            </h:outputLink>
-
-
-            <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
-            <p:dialog id="dialog" header="Login" widgetVar="dlg" resizable="false">
-
-                <h:panelGrid columns="2" cellpadding="5">
-                    <h:outputLabel for="username" value="Username:" />
-                    <p:inputText value="#{LoginBean.username}"
-                                 id="username" required="true" label="username" />
-
-                    <h:outputLabel for="password" value="Password:" />
-                    <h:inputSecret value="#{LoginBean.password}"
-                                   id="password" required="true" label="password" />
-
-                    <f:facet name="footer">
-                        <p:commandButton id="loginButton" value="Login" update="growl"
-                                         actionListener="#{LoginBean.login}"
-                                         oncomplete="handleLoginRequest(xhr, status, args)"/>
-                        <p:commandButton id="cancelLogin" value="cancel" onclick="dlg.hide()"/>
-
-                    </f:facet>
-                    <script type="text/javascript">
-
-
-                        function handleLoginRequest(xhr, status, args) {
-
-
-                            if(args.validationFailed || !args.loggedIn) {
-                                dlg.hide();
-                            }
-                            else {
-                                dlg.hide();
-                            }
-                        }
-                    </script>
-                </h:panelGrid>
-
-            </p:dialog>
-        </h:form>
 
     </div>
+    <!--end holder-->
+
+    <!--start holder-->
+
+    <div class="holder_content1">
+        <section class="group4">
+            <h3>Gallery</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin.
+                Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
+            <div class="pikachoose">
+                <ul id="pikame" >
+                    <li><a href="#"><img src="images/picture3.jpg" width="500" height="250"  alt="picture"/></a><span>“Simplicity is the nature of great souls.”</span></li>
+                    <li><a href="#"><img src="images/picture2.jpg" width="500" height="250" alt="picture"/></a><span>“The little things are infinitely the most important. “ </span></li>
+                    <li><a href="#"><img src="images/picture1.jpg" width="500" height="250" alt="picture"/></a><span>“Simplicity is the essence of happiness.”</span></li>
+                </ul>
+            </div>
+
+        </section>
 
 
 
+        <section class="group5">
+            <h3>Testimonials</h3>
+            <p><span class="purple">1)</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin.
+                Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
+            <p><span class="purple">2)</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin.
+                Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
+            <p><span class="purple">3)</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Sed aliquam sem ut arcu. Phasellus sollicitudin.
+                Vestibulum condimentum  facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero.</p>
 
 
+        </section>
 
 
+    </div>
+    <!--end holder-->
 
-</body>
+    <h:form id="form">
+
+
+        <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+        <p:dialog id="dialog" header="Login" widgetVar="dlg" resizable="false">
+
+            <h:panelGrid columns="2" cellpadding="5">
+                <h:outputLabel for="username" value="Username:" />
+                <p:inputText value="#{LoginBean.username}"
+                             id="username" required="true" label="username" />
+
+                <h:outputLabel for="password" value="Password:" />
+                <h:inputSecret value="#{LoginBean.password}"
+                               id="password" required="true" label="password" />
+                <h:outputText id="error" value="#{LoginBean.error}" style="color:#8b0000"/>
+                <f:facet name="footer">
+                    <p:commandButton id="loginButton" value="Login"
+                                     actionListener="#{LoginBean.login}"
+                                      update="error" />
+                    <p:commandButton id="cancelLogin" value="cancel" onclick="dlg.hide()"/>
+
+                </f:facet>
+            </h:panelGrid>
+
+        </p:dialog>
+    </h:form>
+
+</div>
+
+</h:body>
 </html>

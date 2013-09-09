@@ -30,8 +30,8 @@ public class Project implements Serializable
     private Date createdDate;
     private List<Sprint> sprints ;
 
-    @ManyToMany(targetEntity = User.class ,mappedBy = "projects")
-    private List<User> users;
+    @ManyToMany(targetEntity = UserScrum.class ,mappedBy = "projects")
+    private List<UserScrum> users;
 
 
     public Project(){ }
@@ -42,28 +42,28 @@ public class Project implements Serializable
         this.description =  des;
         this.createdDate = new Date();
         sprints = new ArrayList<Sprint>();
-        users = new ArrayList<User>();
+        users = new ArrayList<UserScrum>();
 
     }
 
-    public void addUser(User user)
+    public void addUser(UserScrum user)
     {
         users.add(user);
     }
-    public void addUser(User user,PermissionSet permission)
+    public void addUser(UserScrum user,PermissionSet permission)
     {
         if(permission.isSamePermission(TypePermission.Create,PermissionObject.User))
         {
            users.add(user);
         }
     }
-    public boolean removeUser(User user)
+    public boolean removeUser(UserScrum user)
     {
         return users.remove(user);
     }
     public boolean removeUser(int position)
     {
-        User user = users.remove(position);
+        UserScrum user = users.remove(position);
         return user !=null ;
     }
 
@@ -117,11 +117,11 @@ public class Project implements Serializable
         this.createdDate = createdDate;
     }
 
-    public List<User> getUsers() {
+    public List<UserScrum> getUsers() {
         return users;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(List<UserScrum> users) {
         this.users = users;
     }
 }

@@ -25,7 +25,7 @@ public class Profile {
     private Date createProfile;
 
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "profile")
-    private List<User> users;
+    private List<UserScrum> users;
     @ManyToMany
     @JoinTable(name="PerssionSetAssignment" ,joinColumns= @JoinColumn(name="profileId"),
                       inverseJoinColumns= @JoinColumn(name="permissiontSetId") )
@@ -38,7 +38,7 @@ public class Profile {
     {
         this.nameProfile = nameProfile;
         this.createProfile = new Date();
-        users = new ArrayList<User>();
+        users = new ArrayList<UserScrum>();
     }
 
     public  Profile(){}
@@ -68,11 +68,11 @@ public class Profile {
         this.createProfile = createProfile;
     }
 
-    public List<User> getUsers() {
+    public List<UserScrum> getUsers() {
         return users;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(List<UserScrum> users) {
         this.users = users;
     }
 
