@@ -1,5 +1,7 @@
 package Models;
 
+import helpers.ProjectHelper;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,53 +47,13 @@ public class Todo {
     private static EntityManagerFactory factory;
     public static void main(String[] args)
     {
-        factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
-        EntityManager em = factory.createEntityManager();
+        ProjectHelper h = ProjectHelper.getInstance();
+       List<Project> project =  h.getProjectByUser("admin","admin");
+        for(Project pr : project)
+        {
+            System.out.println(pr.getName());
+        }
 
-        // Read the existing entries and write to console
-      //  Query q = em.createQuery("select t from Todo t");
-     //   List<Todo> todoList = q.getResultList();
-    //    for (Todo todo : todoList) {
-    //        System.out.println(todo);
-    //    }
-    //    System.out.println("Size: " + todoList.size());
-
-        // Create new todo
-        em.getTransaction().begin();
-       Project project = new Project("test","description");
-       Sprint sprint = new Sprint("s","s");
-
-
-        UserStory us = new UserStory("tes","tes");
-        ArrayList<String> test = new ArrayList<String>();
-        test.add("var");
-        test.add("var");
-        test.add("var");
-
-        us.setAcceptTestCases(test);
-
-        us.setStatusSprint(StatusUserHistory.workingInProgress);
-
-        Task task = new Task("research",15);
-        LogHour log1 = new LogHour(7);
-        LogHour log2 = new LogHour(7);
-        task.addLogHour(log1);
-        task.addLogHour(log2);
-        us.addTask(task);
-        sprint.addUserStory(us);
-        project.addSprint(sprint);
-
-        //do todo = new Todo();
-        //do.setSummary("This is a test");
-        //do.setDescription("This is a test");
-       em.persist(project);
-       em.persist(sprint);
-       em.persist(us);
-       em.persist(task);
-
-       em.getTransaction().commit();
-
-        em.close();
     }
 
 }

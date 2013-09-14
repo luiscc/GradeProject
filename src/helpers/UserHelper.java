@@ -35,8 +35,6 @@ public class UserHelper
     {
         Query query = entityManager.createQuery("select count(u) from UserScrum u  where u.password=:password AND " +
                                                  "u.userlogin =:userLogin ");
-
-
         query.setParameter("password",passwordUser);
         query.setParameter("userLogin",userLogin);
         Long result = (Long) query.getSingleResult();

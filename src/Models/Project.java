@@ -34,7 +34,8 @@ public class Project implements Serializable
     private List<UserScrum> users;
 
 
-    public Project(){ }
+    public Project(){
+    }
 
     public Project(String name, String des)
     {

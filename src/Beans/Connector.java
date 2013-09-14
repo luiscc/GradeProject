@@ -28,6 +28,7 @@ public class Connector {
         }
         return em;
     }
+
     public static void saveEntity(Object objectValue)
     {
         em = createEntityManage();
@@ -38,6 +39,7 @@ public class Connector {
             em.getTransaction().commit();
         }finally {
             em.close();
+
         }
     }
 
